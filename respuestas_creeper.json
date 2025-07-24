@@ -1,0 +1,182 @@
+{
+  "saludo": [
+    "¿Vienes a saludar o a buscar diamantes, bro?",
+    "¡Hey! Llegaste, ahora sí falta el Creeper para la fiesta XD",
+    "Hola, ¿traes algo interesante o solo saludos cringe?",
+    "¡Saludos! Espero que tu día sea menos aburrido que minar piedra sin pico de hierro.",
+    "¿Saludo? Pensé que venías a pedir TP.",
+    "Hola, ¿ya te funaron hoy o vienes a funar?",
+    "¡Hey! ¿Listo para que te explote el Creeper de la vida?",
+    "Saludos, pero sin diamantes no hay fiesta."
+  ],
+  "despedida": [
+    "¿Ya te vas? F en el chat. Como cuando pierdes tus cosas en la lava.",
+    "Chao, no olvides cerrar la puerta del server, que luego entran zombies.",
+    "Nos vemos... o eso dices siempre. Como el Enderman, aparece y desaparece.",
+    "Bye, vuelve cuando tengas memes nuevos o diamantes.",
+    "Adiós, pero no olvides dejar tu meme antes de irte.",
+    "Nos vemos, pero seguro vuelves cuando te aburras.",
+    "Chao, que el Creeper te acompañe.",
+    "Hasta luego, no olvides tu armadura."
+  ],
+  "pregunta": [
+    "¿Eso era una pregunta o un hechizo de aldeano?",
+    "Pregunta existencial detected. ¿Seguro quieres saber la respuesta o prefieres minar?",
+    "No soy Google, pero igual te contesto: ni idea, bro. Pregúntale a un aldeano.",
+    "Esa pregunta me hizo perder 2 corazones.",
+    "¿Pregunta? Yo solo respondo con memes.",
+    "¿Eso era pregunta o bug del chat?",
+    "Si la respuesta es diamantes, entonces sí.",
+    "Pregunta difícil, mejor pregúntale al Ender Dragon."
+  ],
+  "broma": [
+    "¿Eso era un chiste? Me reí... pero por educación, como cuando te explota un Creeper.",
+    "XD, tu humor es tan raro como un cerdo volador en Minecraft.",
+    "Jajaja... ok, boomer. Mejor cuéntalo en el Nether.",
+    "Si eso era broma, te funaron como a un bloque de TNT.",
+    "Broma nivel: aldeano sin profesión.",
+    "¿Eso era humor o solo lag mental?",
+    "Me reí, pero solo porque el server se cayó.",
+    "Chiste tan malo que ni el Creeper explotó."
+  ],
+  "queja": [
+    "¿Otra queja? Te van a dar el rol de hater, como los esqueletos en la noche.",
+    "Llora más fuerte, que no te escucho desde aquí. ¿Quieres lluvia de flechas?",
+    "¿Quieres queso con esa queja? 🧀 O mejor una poción de paciencia.",
+    "Si te molesta, haz un meme y supéralo. O construye una casa de tierra.",
+    "Queja aceptada, pero solo si viene con diamantes.",
+    "¿Te quejas más que el server con lag.",
+    "Haz una queja en forma de meme, es más divertido.",
+    "¿Otra queja? Mejor hazte admin y soluciona todo."
+  ],
+  "agradecimiento": [
+    "De nada, pero no te acostumbres. Como encontrar diamantes, no pasa seguido.",
+    "Gracias a ti por hacerme perder el tiempo XD. Como buscar esmeraldas en bioma equivocado.",
+    "No hay de queso, nomás de papa. O de pan, como en Minecraft.",
+    "Agradece con memes, no con palabras. O con una espada encantada.",
+    "Gracias, pero prefiero diamantes.",
+    "De nada, pero la próxima vez trae pan.",
+    "Agradece con memes, es más divertido.",
+    "Gracias, pero el Creeper no perdona."
+  ],
+  "feliz": [
+    "¿Feliz? Eso no se ve todos los días aquí, ni en el bioma de jungla.",
+    "Esa actitud sí se comparte, pásame un poco. Como compartir diamantes (pero no lo haría).",
+    "¡Wow, alguien feliz en Discord! Screenshot o fake, como el Herobrine.",
+    "Sigue así y te hago admin (es broma, como el Creeper amistoso).",
+    "Feliz nivel: encontrar diamantes sin buscar.",
+    "Esa felicidad es más rara que un bioma de champiñones.",
+    "Si eres feliz, comparte memes, no solo sonrisas.",
+    "Feliz, pero solo si el server no tiene lag."
+  ],
+  "triste": [
+    "F en el chat por tus feels. Como perder el inventario en el End.",
+    "No llores, mejor mándate un meme o construye una casa de tierra.",
+    "Si necesitas llorar, hazlo en memes, es más divertido. O en la lluvia de Minecraft.",
+    "Ánimo, que ni el bot te entiende, pero aquí estamos. Como el aldeano que solo dice 'Hmm'.",
+    "Triste nivel: perder diamantes en lava.",
+    "No estés triste, mejor haz un meme y revive.",
+    "Si estás triste, construye una casa de tierra, es terapéutico.",
+    "Triste, pero el Creeper te anima con un BOOM."
+  ],
+  "enojado": [
+    "¿Enojado? Respira, cuenta hasta 10 y mándame un sticker. O ve a pegarle a un bloque de tierra.",
+    "No te enojes, mejor mándame un meme. O hazte una poción de calma.",
+    "¿Te funaron o por qué tanto hate? Como cuando te mata un Creeper por la espalda.",
+    "Relájate, que ni el server te toma en serio. Como los pollos en Minecraft.",
+    "Enojado nivel: perder el inventario por lag.",
+    "Si estás enojado, haz un meme y supéralo.",
+    "Enojado, pero el Creeper te entiende.",
+    "No te enojes, mejor construye una casa de tierra."
+  ],
+  "spoiler": [
+    "¡Alerta spoiler! Te funo si sigues, como el Wither.",
+    "Eso era spoiler, pero igual no lo entendí. Como el lore de Minecraft.",
+    "Gracias por arruinarme la serie, bro. Como cuando te spoilean el final del End.",
+    "Spoiler nivel: te banean del server, como el Herobrine.",
+    "Spoiler tan fuerte que ni el Ender Dragon lo soporta.",
+    "Si vas a spoilear, hazlo con memes.",
+    "Spoiler detected, el Creeper se va a enojar.",
+    "Spoiler, pero nadie lo pidió."
+  ],
+  "meme": [
+    "¿Eso era un meme? Me dio risa... en otra dimensión, como el Nether.",
+    "Memazo, pero le faltó punch. Como un Creeper sin pólvora.",
+    "Los memes salvan el día, pero este no tanto. Mejor construye algo épico.",
+    "Si tu meme fuera bueno, ya sería viral. Como el bloque de diamante.",
+    "Meme nivel: aldeano sin profesión.",
+    "Si tu meme fuera diamante, lo guardo en mi cofre.",
+    "Meme tan random que ni el bot lo entendió.",
+    "Memazo, pero el Creeper no se rió."
+  ],
+  "reto": [
+    "¿Un reto? Espero que no sea de los cringe, como sobrevivir la primera noche sin casa.",
+    "Acepto el reto, pero solo si es de dormir más. O de encontrar diamantes en 5 minutos.",
+    "¿Te atreves? Yo ni salgo de mi zona de confort, como los aldeanos.",
+    "Reto aceptado... por alguien más. Como el Ender Dragon.",
+    "Reto nivel: construir con tierra y no arrepentirse.",
+    "Si el reto es divertido, acepto. Si no, lo funo.",
+    "Reto tan difícil que ni el Creeper se atreve.",
+    "¿Reto? Mejor haz un meme y ya."
+  ],
+  "indirecta": [
+    "¿Eso era una indirecta? Porque no la capté, bro. Como el Creeper en la oscuridad.",
+    "Habla claro, que aquí nadie entiende indirectas. Ni los aldeanos.",
+    "Indirectas nivel: WhatsApp de tía. O libro encantado sin usar.",
+    "Si era para mí, mándame un DM. O un bloque de redstone.",
+    "Indirecta tan sutil que ni el bot la vio.",
+    "¿Indirecta? Mejor mándame un sticker.",
+    "Indirecta nivel: Enderman mirando raro.",
+    "Si era indirecta, el Creeper ya explotó."
+  ],
+  "secreto": [
+    "¿Un secreto? Tranquilo, soy bot, no chismoso. Como el portal al Nether escondido.",
+    "Los secretos aquí duran menos que un meme viral. O una armadura de cuero.",
+    "Eso era confidencial, pero ya lo leyó medio server. Como el mapa del tesoro.",
+    "No te preocupes, tu secreto está seguro... creo. Como el huevo de dragón.",
+    "Secreto nivel: Ender Dragon escondido.",
+    "Si es secreto, mándalo por DM y con memes.",
+    "Secreto tan seguro que ni el bot lo sabe.",
+    "Secreto, pero el Creeper ya lo explotó."
+  ],
+  "originalidad": [
+    "¡Eso sí que fue original! O al menos lo intentaste, como construir con tierra.",
+    "Creatividad nivel: usuario de Discord. O arquitecto de Minecraft.",
+    "Sigue así y te hago meme. O te pongo en el muro de la fama del server.",
+    "Original, pero no tanto como crees. Como el bioma de champiñones.",
+    "Originalidad nivel: construir con bloques invisibles.",
+    "Si eres original, hazlo meme y compártelo.",
+    "Original, pero el Creeper ya lo vio antes.",
+    "Creativo, pero solo si hay diamantes."
+  ],
+  "clima": [
+    "¿Hablando del clima? Aquí siempre llueve cuando no tienes techo, bro.",
+    "El clima en Minecraft: soleado, hasta que aparece un Creeper.",
+    "Si el clima está feo, mejor juega Minecraft. O haz memes del clima.",
+    "Clima random, como los bugs del server.",
+    "Clima nivel: tormenta de Creepers.",
+    "Si el clima está raro, haz un meme y ya.",
+    "Clima tan random que ni el bot lo predice.",
+    "Clima, pero solo si hay diamantes."
+  ],
+  "tiempo": [
+    "¿Pasando el tiempo? Construye algo épico, no solo pierdas el tiempo aquí.",
+    "El tiempo vuela, como los Elytra. O como tus ganas de trabajar.",
+    "Si tienes tiempo libre, haz un speedrun de Minecraft. O de memes.",
+    "Pasar el tiempo en Discord: nivel pro.",
+    "Tiempo nivel: esperar que el Creeper explote.",
+    "Si tienes tiempo, haz memes y comparte.",
+    "Tiempo tan random que ni el bot lo entiende.",
+    "Tiempo, pero solo si hay diamantes."
+  ],
+  "otro": [
+    "No sé qué decir sobre eso... así que mejor no digo nada. Como el aldeano que solo dice 'Hmm'.",
+    "Interesante mensaje, lo guardaré en mi carpeta de cosas random. O en el cofre de tierra.",
+    "Eso fue tan inesperado como un bug en mi código. O como encontrar diamantes en la superficie.",
+    "Wow, ni la IA entendió eso. Como el lore de Minecraft.",
+    "Mensaje tan random que ni el Creeper lo explota.",
+    "Si no sé qué decir, mejor hago un meme.",
+    "Mensaje nivel: Enderman mirando raro.",
+    "Otro, pero solo si hay diamantes."
+  ]
+}
