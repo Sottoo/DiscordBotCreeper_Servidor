@@ -5,8 +5,16 @@ from discord import Interaction
 def setup_commands(bot):
     @bot.command()
     async def ip(ctx):
-        """Muestra la IP del servidor de Minecraft."""
-        await ctx.send("La IP del servidor es: 108.181.148.38:25572")
+        """Muestra la IP del servidor de Minecraft para Java y Bedrock."""
+        mensaje = (
+            "🎮 **IPs del Servidor de Minecraft** 🎮\n\n"
+            "**Java Edition:**\n"
+            "└─ IP: `108.181.102.178:25587`\n\n"
+            "**Bedrock Edition:**\n"
+            "└─ IP: `108.181.102.178`\n"
+            "└─ Puerto: `25587`"
+        )
+        await ctx.send(mensaje)
 
     @bot.command()
     async def mods(ctx):
