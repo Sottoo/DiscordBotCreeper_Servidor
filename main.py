@@ -47,12 +47,20 @@ async def on_ready():
 @bot.event
 async def on_ready():
     print(f'Bot conectado como {bot.user}')
-    # Solo cargar la extensión si no está cargada
+    # Solo cargar las extensiones si no están cargadas
     if 'reglas' not in bot.extensions:
         try:
             await bot.load_extension('reglas')
             print('Extensión "reglas" cargada correctamente.')
         except Exception as e:
-            print(f'Error al cargar la extensión: {e}')
+            print(f'Error al cargar la extensión reglas: {e}')
+    
+    # Cargar extensión de estado del servidor
+    if 'estado_servidor' not in bot.extensions:
+        try:
+            await bot.load_extension('estado_servidor')
+            print('Extensión "estado_servidor" cargada correctamente.')
+        except Exception as e:
+            print(f'Error al cargar la extensión estado_servidor: {e}')
 
 bot.run(TOKEN)
