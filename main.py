@@ -39,15 +39,12 @@ from bienvenida import send_welcome_message
 async def on_member_join(member):
     await send_welcome_message(member)
 
+# Cargar las extensiones de forma asíncrona al iniciar el bot
 @bot.event
 async def on_ready():
     print(f'Bot conectado como {bot.user}')
-
-# Cargar la extensión de reglas de forma asíncrona al iniciar el bot
-@bot.event
-async def on_ready():
-    print(f'Bot conectado como {bot.user}')
-    # Solo cargar las extensiones si no están cargadas
+    
+    # Cargar extensión de reglas
     if 'reglas' not in bot.extensions:
         try:
             await bot.load_extension('reglas')
@@ -60,6 +57,12 @@ async def on_ready():
         try:
             await bot.load_extension('estado_servidor')
             print('Extensión "estado_servidor" cargada correctamente.')
+            
+            # Iniciar el monitoreo manualmente después de cargar
+            cog = bot.get_cog('EstadoServidor')
+            if cog and not cog.monitorear_servidor.is_running():
+                cog.monitorear_servidor.start()
+                print('Monitoreo del servidor iniciado.')
         except Exception as e:
             print(f'Error al cargar la extensión estado_servidor: {e}')
 

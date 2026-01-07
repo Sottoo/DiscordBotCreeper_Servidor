@@ -361,5 +361,20 @@ class EstadoServidor(commands.Cog):
         await self.enviar_mensaje_servidor_cerrado()
 
 
+    @commands.command(name='testcanal')
+    @commands.has_permissions(administrator=True)
+    async def test_canal(self, ctx):
+        """Prueba si el bot puede enviar al canal configurado"""
+        canal = self.bot.get_channel(CANAL_NOTIFICACIONES_ID)
+        if canal:
+            try:
+                await canal.send("✅ **Test exitoso!** El bot puede enviar mensajes a este canal.", delete_after=10)
+                await ctx.send(f"✅ Mensaje enviado correctamente a {canal.mention}")
+            except Exception as e:
+                await ctx.send(f"❌ Error al enviar al canal: {e}")
+        else:
+            await ctx.send(f"❌ No se encontró el canal con ID: {CANAL_NOTIFICACIONES_ID}")
+
+
 async def setup(bot):
     await bot.add_cog(EstadoServidor(bot))
