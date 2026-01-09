@@ -23,13 +23,25 @@ setup_leermensaje(bot)
 # Integrar respuesta si o no creeper en el evento de mensajes
 from intenciones import respuesta_si_o_no_creeper
 
+# Integrar respuestas sobre el servidor de Minecraft
+from intenciones_servidor import respuesta_servidor_minecraft
+
 @bot.event
 async def on_message(message):
     if message.author.bot:
         return
+    
+    # Primero verificar si es una pregunta sobre el servidor de Minecraft
+    respuesta_mc = await respuesta_servidor_minecraft(message.content)
+    if respuesta_mc:
+        await message.channel.send(respuesta_mc)
+        return
+    
+    # Si no, verificar si es un "si o no creeper"
     respuesta = respuesta_si_o_no_creeper(message.content)
     if respuesta:
         await message.channel.send(respuesta)
+    
     await bot.process_commands(message)
 
 # Evento para dar la bienvenida a nuevos miembros
