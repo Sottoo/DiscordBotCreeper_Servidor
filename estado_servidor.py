@@ -21,11 +21,11 @@ SERVIDOR_PUERTO = 25587
 CANAL_NOTIFICACIONES_ID = 1277843843743613012
 
 # Horarios del servidor
-HORA_APERTURA = 16  # 4:00 PM
-HORA_CIERRE = 22    # 10:00 PM
+HORA_APERTURA = 14  # 2:00 PM
+HORA_CIERRE = 2     # 2:00 AM (del día siguiente)
 
 ZONA_HORARIA = 'America/Mexico_City'
-INTERVALO_VERIFICACION = 60  # Verificar cada 60 segundos (menos spam en logs)
+INTERVALO_VERIFICACION = 60
 
 
 class EstadoServidor(commands.Cog):
@@ -49,20 +49,34 @@ class EstadoServidor(commands.Cog):
         return int(dt.timestamp())
     
     def calcular_hora_cierre(self):
-        """Calcula la hora de cierre (10 PM de hoy)"""
+        """Calcula la hora de cierre (2 AM del día siguiente)"""
         ahora = self.obtener_hora_actual()
-        cierre = ahora.replace(hour=HORA_CIERRE, minute=0, second=0, microsecond=0)
-        if ahora.hour >= HORA_CIERRE:
-            cierre += timedelta(days=1)
+        
+        # Si es entre 2AM y 2PM, el cierre es hoy a las 2AM (ya pasó, así que sería mañana)
+        # Si es entre 2PM y 11:59PM, el cierre es mañana a las 2AM
+        # Si es entre 12AM y 2AM, el cierre es hoy a las 2AM
+        
+        if ahora.hour >= HORA_APERTURA:
+            # Entre 2PM y 11:59PM → cierre es mañana a las 2AM
+            cierre = ahora.replace(hour=HORA_CIERRE, minute=0, second=0, microsecond=0) + timedelta(days=1)
+        elif ahora.hour < HORA_CIERRE:
+            # Entre 12AM y 2AM → cierre es hoy a las 2AM
+            cierre = ahora.replace(hour=HORA_CIERRE, minute=0, second=0, microsecond=0)
+        else:
+            # Entre 2AM y 2PM → cierre sería mañana a las 2AM
+            cierre = ahora.replace(hour=HORA_CIERRE, minute=0, second=0, microsecond=0) + timedelta(days=1)
+        
         return cierre
     
     def calcular_proxima_apertura(self):
-        """Calcula la próxima apertura a las 4 PM"""
+        """Calcula la próxima apertura a las 2 PM"""
         ahora = self.obtener_hora_actual()
         
         if ahora.hour < HORA_APERTURA:
+            # Antes de las 2PM → apertura es hoy
             apertura = ahora.replace(hour=HORA_APERTURA, minute=0, second=0, microsecond=0)
         else:
+            # Después de las 2PM → apertura es mañana
             apertura = ahora.replace(hour=HORA_APERTURA, minute=0, second=0, microsecond=0) + timedelta(days=1)
         
         return apertura
@@ -79,7 +93,7 @@ class EstadoServidor(commands.Cog):
             return False, 0, 0
     
     async def enviar_mensaje_servidor_abierto(self, jugadores=0, max_jugadores=20):
-        """Envía embed profesional cuando el servidor se enciende"""
+        """Envía embed cuando el servidor se enciende"""
         if self.canal_notificaciones is None:
             return
         
@@ -87,12 +101,12 @@ class EstadoServidor(commands.Cog):
         timestamp_cierre = self.obtener_timestamp_unix(hora_cierre)
         
         embed = discord.Embed(
-            color=0x2ECC71  # Verde elegante
+            color=0x2ECC71
         )
         
         embed.set_author(
             name="SERVIDOR DE MINECRAFT",
-            icon_url="https://i.imgur.com/oBVMSmi.png"
+            icon_url="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/favicon-96x96.png"
         )
         
         embed.add_field(
@@ -119,8 +133,7 @@ class EstadoServidor(commands.Cog):
             inline=True
         )
         
-        embed.set_footer(text="Horario: 4:00 PM - 10:00 PM")
-        embed.set_thumbnail(url="https://i.imgur.com/6YToyEF.png")
+        embed.set_footer(text="Horario: 2:00 PM - 2:00 AM")
         
         try:
             await self.canal_notificaciones.send(embed=embed)
@@ -128,7 +141,7 @@ class EstadoServidor(commands.Cog):
             print(f"Error al enviar mensaje: {e}")
     
     async def enviar_mensaje_servidor_cerrado(self):
-        """Envía embed profesional cuando el servidor se apaga"""
+        """Envía embed cuando el servidor se apaga"""
         if self.canal_notificaciones is None:
             return
         
@@ -136,12 +149,12 @@ class EstadoServidor(commands.Cog):
         timestamp_apertura = self.obtener_timestamp_unix(proxima_apertura)
         
         embed = discord.Embed(
-            color=0xE74C3C  # Rojo elegante
+            color=0xE74C3C
         )
         
         embed.set_author(
             name="SERVIDOR DE MINECRAFT",
-            icon_url="https://i.imgur.com/oBVMSmi.png"
+            icon_url="https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/favicon-96x96.png"
         )
         
         embed.add_field(
@@ -158,12 +171,11 @@ class EstadoServidor(commands.Cog):
         
         embed.add_field(
             name="📋 Horario diario",
-            value="```🟢 Abierto:  4:00 PM\n🔴 Cierra:  10:00 PM```",
+            value="```🟢 Abierto:  2:00 PM\n🔴 Cierra:   2:00 AM```",
             inline=False
         )
         
         embed.set_footer(text="¡Nos vemos en la próxima sesión!")
-        embed.set_thumbnail(url="https://i.imgur.com/JxYMC8T.png")
         
         try:
             await self.canal_notificaciones.send(embed=embed)
@@ -184,12 +196,10 @@ class EstadoServidor(commands.Cog):
         # Detectar cambio de estado
         if self.ultimo_estado is not None:
             if online and not self.ultimo_estado:
-                # OFFLINE → ONLINE
                 print(f"[{datetime.now().strftime('%H:%M:%S')}] 🟢 Servidor ONLINE detectado")
                 await self.enviar_mensaje_servidor_abierto(jugadores, max_jugadores)
             
             elif not online and self.ultimo_estado:
-                # ONLINE → OFFLINE
                 print(f"[{datetime.now().strftime('%H:%M:%S')}] 🔴 Servidor OFFLINE detectado")
                 await self.enviar_mensaje_servidor_cerrado()
         
